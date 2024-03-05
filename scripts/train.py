@@ -8,26 +8,15 @@ from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
 from plr_exercise.models.cnn import Net
 import wandb
+import optuna
+import logging
+import sys
 
 wandb.login()
 
+
 def train(args, model, device, train_loader, optimizer, epoch):
     model.train()
-
-    run = wandb.init(
-        # Set the project where this run will be logged
-        project="plr_exercise",
-        # Track hyperparameters and run metadata
-        config={
-            "learning_rate": args.lr,
-            "epochs": args.epochs,
-        },
-    )
-    # Save the code to W&B
-    code_artifact = wandb.Artifact(name='code_snapshot', type='code')
-    code_artifact.add_file('scripts/train.py')
-    code_artifact.add_file('plr_exercise/models/cnn.py')
-    run.log_artifact(code_artifact)
 
     for batch_idx, (data, target) in enumerate(train_loader):
 
@@ -75,6 +64,39 @@ def test(model, device, test_loader, epoch):
     )
     wandb.log({"test_loss": test_loss, "test_accuracy": 100.0 * correct / len(test_loader.dataset)})
 
+    return 100.0 * correct / len(test_loader.dataset)
+
+
+def objective(trial, args, model, device, train_loader, test_loader):
+    # Set up the trial's parameters to search
+    learning_rate = trial.suggest_loguniform("learning_rate", 1e-5, 0.1)
+    epochs = trial.suggest_int("epochs", 1, 15)
+
+    args.lr = learning_rate
+    args.epochs = epochs
+
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+
+    run = wandb.init(
+        # Set the project where this run will be logged
+        project="plr_exercise",
+        # Track hyperparameters and run metadata
+        config={
+            "learning_rate": args.lr,
+            "epochs": args.epochs,
+        },
+        name=f"{args.optuna_study_name}-{trial.number}",
+    )
+
+    for epoch in range(args.epochs):
+        train(args, model, device, train_loader, optimizer, epoch)
+        test_acc = test(model, device, test_loader, epoch)
+        trial.report(test_acc, epoch)
+
+    wandb.finish()
+
+    return test_acc
+
 
 def main():
     # Training settings
@@ -99,6 +121,14 @@ def main():
         help="how many batches to wait before logging training status",
     )
     parser.add_argument("--save-model", action="store_true", default=False, help="For Saving the current Model")
+    parser.add_argument(
+        "--optuna_optimization",
+        action="store_true",
+        default=False,
+        help="enable Optuna hyperparameter optimization study",
+    )
+    parser.add_argument("--optuna_study_name", type=str, default="optuna-study", help="name of the Optuna study")
+    parser.add_argument("--num_trials", type=int, default=15, help="number of trials for Optuna study")
     args = parser.parse_args()
     use_cuda = not args.no_cuda and torch.cuda.is_available()
 
@@ -106,8 +136,10 @@ def main():
 
     if use_cuda:
         device = torch.device("cuda")
+        print("Using GPU")
     else:
         device = torch.device("cpu")
+        print("Using CPU")
 
     train_kwargs = {"batch_size": args.batch_size}
     test_kwargs = {"batch_size": args.test_batch_size}
@@ -123,13 +155,49 @@ def main():
     test_loader = torch.utils.data.DataLoader(dataset2, **test_kwargs)
 
     model = Net().to(device)
-    optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
-    scheduler = StepLR(optimizer, step_size=1, gamma=args.gamma)
-    for epoch in range(args.epochs):
-        train(args, model, device, train_loader, optimizer, epoch)
-        test(model, device, test_loader, epoch)
-        scheduler.step()
+    if args.optuna_optimization:  # Optimize hyperparameters using Optuna
+        # Add stream handler of stdout to show the messages
+        optuna.logging.get_logger("optuna").addHandler(logging.StreamHandler(sys.stdout))
+        study_name = args.optuna_study_name
+        storage_name = "sqlite:///{}.db".format(study_name)
+
+        study = optuna.create_study(
+            direction="maximize", study_name=study_name, storage=storage_name, load_if_exists=True
+        )
+        study.optimize(
+            lambda trial: objective(trial, args, model, device, train_loader, test_loader),
+            n_trials=args.num_trials,
+        )
+
+        # Print the best hyperparameters
+        print("Best trial:")
+        trial = study.best_trial
+        print("  Value: {}".format(trial.value))
+        print("  Params: ")
+        for key, value in trial.params.items():
+            print("    {}: {}".format(key, value))
+    else:
+        optimizer = optim.Adam(model.parameters(), lr=args.lr)
+        run = wandb.init(
+            # Set the project where this run will be logged
+            project="plr_exercise",
+            # Track hyperparameters and run metadata
+            config={
+                "learning_rate": args.lr,
+                "epochs": args.epochs,
+            },
+        )
+        code_artifact = wandb.Artifact(name="code_snapshot", type="code")
+        code_artifact.add_file("scripts/train.py")
+        code_artifact.add_file("plr_exercise/models/cnn.py")
+        run.log_artifact(code_artifact)
+
+        scheduler = StepLR(optimizer, step_size=1, gamma=args.gamma)
+        for epoch in range(args.epochs):
+            train(args, model, device, train_loader, optimizer, epoch)
+            test_acc = test(model, device, test_loader, epoch)
+            scheduler.step()
 
     if args.save_model:
         torch.save(model.state_dict(), "mnist_cnn.pt")
