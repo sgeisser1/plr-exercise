@@ -1,0 +1,129 @@
+Train Epoch: 0 [0/60000 (0%)]	Loss: 2.347777
+Train Epoch: 0 [640/60000 (1%)]	Loss: 2.391735
+Train Epoch: 0 [1280/60000 (2%)]	Loss: 2.330089
+Train Epoch: 0 [1920/60000 (3%)]	Loss: 2.397458
+Train Epoch: 0 [2560/60000 (4%)]	Loss: 2.338202
+Train Epoch: 0 [3200/60000 (5%)]	Loss: 2.327933
+Train Epoch: 0 [3840/60000 (6%)]	Loss: 2.304789
+Train Epoch: 0 [4480/60000 (7%)]	Loss: 2.342634
+Train Epoch: 0 [5120/60000 (9%)]	Loss: 2.446846
+Train Epoch: 0 [5760/60000 (10%)]	Loss: 2.377187
+Train Epoch: 0 [6400/60000 (11%)]	Loss: 2.395917
+Train Epoch: 0 [7040/60000 (12%)]	Loss: 2.316578
+Train Epoch: 0 [7680/60000 (13%)]	Loss: 2.285471
+Trial 7 failed with parameters: {'learning_rate': 2.1650207759202594e-05, 'epochs': 3} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 168, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 90, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 21, in train
+    for batch_idx, (data, target) in enumerate(train_loader):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Trial 7 failed with value None.
+[33m[W 2024-03-05 13:52:53,665][39m Trial 7 failed with parameters: {'learning_rate': 2.1650207759202594e-05, 'epochs': 3} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 168, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 90, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 21, in train
+    for batch_idx, (data, target) in enumerate(train_loader):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+[33m[W 2024-03-05 13:52:53,666][39m Trial 7 failed with value None.
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 205, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 167, in main
+    study.optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 168, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 90, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 21, in train
+    for batch_idx, (data, target) in enumerate(train_loader):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 205, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 167, in main
+    study.optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 168, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 90, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 21, in train
+    for batch_idx, (data, target) in enumerate(train_loader):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

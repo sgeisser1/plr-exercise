@@ -1,0 +1,143 @@
+Train Epoch: 0 [0/60000 (0%)]	Loss: 2.277249
+Train Epoch: 0 [640/60000 (1%)]	Loss: 2.238619
+Train Epoch: 0 [1280/60000 (2%)]	Loss: 2.163180
+Train Epoch: 0 [1920/60000 (3%)]	Loss: 2.048092
+Train Epoch: 0 [2560/60000 (4%)]	Loss: 1.924542
+Train Epoch: 0 [3200/60000 (5%)]	Loss: 1.762944
+Train Epoch: 0 [3840/60000 (6%)]	Loss: 1.568784
+Train Epoch: 0 [4480/60000 (7%)]	Loss: 1.576046
+Train Epoch: 0 [5120/60000 (9%)]	Loss: 1.376475
+Train Epoch: 0 [5760/60000 (10%)]	Loss: 1.206417
+Train Epoch: 0 [6400/60000 (11%)]	Loss: 1.102914
+Train Epoch: 0 [7040/60000 (12%)]	Loss: 0.971887
+Train Epoch: 0 [7680/60000 (13%)]	Loss: 0.999067
+Train Epoch: 0 [8320/60000 (14%)]	Loss: 0.907549
+Train Epoch: 0 [8960/60000 (15%)]	Loss: 0.990901
+Train Epoch: 0 [9600/60000 (16%)]	Loss: 0.772911
+Train Epoch: 0 [10240/60000 (17%)]	Loss: 0.738343
+Train Epoch: 0 [10880/60000 (18%)]	Loss: 0.693079
+Train Epoch: 0 [11520/60000 (19%)]	Loss: 0.740158
+Train Epoch: 0 [12160/60000 (20%)]	Loss: 0.641325
+Train Epoch: 0 [12800/60000 (21%)]	Loss: 0.582588
+Train Epoch: 0 [13440/60000 (22%)]	Loss: 0.613292
+Train Epoch: 0 [14080/60000 (23%)]	Loss: 0.540679
+Train Epoch: 0 [14720/60000 (25%)]	Loss: 0.479484
+Train Epoch: 0 [15360/60000 (26%)]	Loss: 0.816889
+Train Epoch: 0 [16000/60000 (27%)]	Loss: 0.606804
+Train Epoch: 0 [16640/60000 (28%)]	Loss: 0.476006
+Trial 8 failed with parameters: {'learning_rate': 3.5204706165047055e-05, 'epochs': 1} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 170, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 92, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 24, in train
+    optimizer.zero_grad()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/decorators.py", line 46, in disable
+    return DisableContext()(fn)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 441, in __call__
+    (filename is None or skipfiles.check(fn))
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 405, in check
+    return check_verbose(obj, is_inlined_call).skipped
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 401, in check_verbose
+    return check_file(fi.filename, is_inlined_call)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 309, in check_file
+    return SkipResult(
+KeyboardInterrupt
+Trial 8 failed with value None.
+[33m[W 2024-03-05 13:56:14,730][39m Trial 8 failed with parameters: {'learning_rate': 3.5204706165047055e-05, 'epochs': 1} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 170, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 92, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 24, in train
+    optimizer.zero_grad()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/decorators.py", line 46, in disable
+    return DisableContext()(fn)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 441, in __call__
+    (filename is None or skipfiles.check(fn))
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 405, in check
+    return check_verbose(obj, is_inlined_call).skipped
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 401, in check_verbose
+    return check_file(fi.filename, is_inlined_call)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 309, in check_file
+    return SkipResult(
+KeyboardInterrupt
+[33m[W 2024-03-05 13:56:14,731][39m Trial 8 failed with value None.
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 208, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 169, in main
+    study.optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 170, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 92, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 24, in train
+    optimizer.zero_grad()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/decorators.py", line 46, in disable
+    return DisableContext()(fn)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 441, in __call__
+    (filename is None or skipfiles.check(fn))
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 405, in check
+    return check_verbose(obj, is_inlined_call).skipped
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 401, in check_verbose
+    return check_file(fi.filename, is_inlined_call)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 309, in check_file
+    return SkipResult(
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 208, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 169, in main
+    study.optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 170, in <lambda>
+    lambda trial: objective(trial, args, model, device, train_loader, test_loader),
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 92, in objective
+    train(args, model, device, train_loader, optimizer, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 24, in train
+    optimizer.zero_grad()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_compile.py", line 24, in inner
+    return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/decorators.py", line 46, in disable
+    return DisableContext()(fn)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 441, in __call__
+    (filename is None or skipfiles.check(fn))
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 405, in check
+    return check_verbose(obj, is_inlined_call).skipped
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 401, in check_verbose
+    return check_file(fi.filename, is_inlined_call)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/_dynamo/skipfiles.py", line 309, in check_file
+    return SkipResult(
+KeyboardInterrupt

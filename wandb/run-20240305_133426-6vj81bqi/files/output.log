@@ -1,0 +1,210 @@
+Train Epoch: 0 [0/60000 (0%)]	Loss: 2.309246
+Train Epoch: 0 [640/60000 (1%)]	Loss: 2.347789
+Train Epoch: 0 [1280/60000 (2%)]	Loss: 2.399261
+Train Epoch: 0 [1920/60000 (3%)]	Loss: 2.240091
+Train Epoch: 0 [2560/60000 (4%)]	Loss: 2.314455
+Train Epoch: 0 [3200/60000 (5%)]	Loss: 2.306496
+Train Epoch: 0 [3840/60000 (6%)]	Loss: 2.356460
+Train Epoch: 0 [4480/60000 (7%)]	Loss: 2.351967
+Train Epoch: 0 [5120/60000 (9%)]	Loss: 2.335585
+Train Epoch: 0 [5760/60000 (10%)]	Loss: 2.294807
+Train Epoch: 0 [6400/60000 (11%)]	Loss: 2.385824
+Train Epoch: 0 [7040/60000 (12%)]	Loss: 2.338225
+Train Epoch: 0 [7680/60000 (13%)]	Loss: 2.374776
+Train Epoch: 0 [8320/60000 (14%)]	Loss: 2.345477
+Train Epoch: 0 [8960/60000 (15%)]	Loss: 2.281538
+Train Epoch: 0 [9600/60000 (16%)]	Loss: 2.336082
+Train Epoch: 0 [10240/60000 (17%)]	Loss: 2.463943
+Train Epoch: 0 [10880/60000 (18%)]	Loss: 2.428802
+Train Epoch: 0 [11520/60000 (19%)]	Loss: 2.269572
+Train Epoch: 0 [12160/60000 (20%)]	Loss: 2.499630
+Train Epoch: 0 [12800/60000 (21%)]	Loss: 2.359646
+Train Epoch: 0 [13440/60000 (22%)]	Loss: 2.470474
+Train Epoch: 0 [14080/60000 (23%)]	Loss: 2.244855
+Train Epoch: 0 [14720/60000 (25%)]	Loss: 2.363838
+Train Epoch: 0 [15360/60000 (26%)]	Loss: 2.358905
+Train Epoch: 0 [16000/60000 (27%)]	Loss: 2.255103
+Train Epoch: 0 [16640/60000 (28%)]	Loss: 2.359378
+Train Epoch: 0 [17280/60000 (29%)]	Loss: 2.360786
+Train Epoch: 0 [17920/60000 (30%)]	Loss: 2.447618
+Train Epoch: 0 [18560/60000 (31%)]	Loss: 2.304005
+Train Epoch: 0 [19200/60000 (32%)]	Loss: 2.396850
+Train Epoch: 0 [19840/60000 (33%)]	Loss: 2.396031
+Train Epoch: 0 [20480/60000 (34%)]	Loss: 2.301917
+Train Epoch: 0 [21120/60000 (35%)]	Loss: 2.403258
+Train Epoch: 0 [21760/60000 (36%)]	Loss: 2.464638
+Train Epoch: 0 [22400/60000 (37%)]	Loss: 2.538923
+Train Epoch: 0 [23040/60000 (38%)]	Loss: 2.316677
+Train Epoch: 0 [23680/60000 (39%)]	Loss: 2.443787
+Train Epoch: 0 [24320/60000 (41%)]	Loss: 2.365817
+Train Epoch: 0 [24960/60000 (42%)]	Loss: 2.453357
+Train Epoch: 0 [25600/60000 (43%)]	Loss: 2.326932
+Train Epoch: 0 [26240/60000 (44%)]	Loss: 2.422819
+Train Epoch: 0 [26880/60000 (45%)]	Loss: 2.356545
+Train Epoch: 0 [27520/60000 (46%)]	Loss: 2.485964
+Train Epoch: 0 [28160/60000 (47%)]	Loss: 2.230110
+Train Epoch: 0 [28800/60000 (48%)]	Loss: 2.464434
+Train Epoch: 0 [29440/60000 (49%)]	Loss: 2.426352
+Train Epoch: 0 [30080/60000 (50%)]	Loss: 2.431138
+Train Epoch: 0 [30720/60000 (51%)]	Loss: 2.396968
+Train Epoch: 0 [31360/60000 (52%)]	Loss: 2.369624
+Train Epoch: 0 [32000/60000 (53%)]	Loss: 2.402016
+Train Epoch: 0 [32640/60000 (54%)]	Loss: 2.334636
+Train Epoch: 0 [33280/60000 (55%)]	Loss: 2.337868
+Train Epoch: 0 [33920/60000 (57%)]	Loss: 2.461989
+Train Epoch: 0 [34560/60000 (58%)]	Loss: 2.276766
+Train Epoch: 0 [35200/60000 (59%)]	Loss: 2.309628
+Train Epoch: 0 [35840/60000 (60%)]	Loss: 2.428413
+Train Epoch: 0 [36480/60000 (61%)]	Loss: 2.385137
+Train Epoch: 0 [37120/60000 (62%)]	Loss: 2.375203
+Train Epoch: 0 [37760/60000 (63%)]	Loss: 2.502949
+Train Epoch: 0 [38400/60000 (64%)]	Loss: 2.404929
+Train Epoch: 0 [39040/60000 (65%)]	Loss: 2.270844
+Train Epoch: 0 [39680/60000 (66%)]	Loss: 2.350478
+Train Epoch: 0 [40320/60000 (67%)]	Loss: 2.295666
+Train Epoch: 0 [40960/60000 (68%)]	Loss: 2.481600
+Train Epoch: 0 [41600/60000 (69%)]	Loss: 2.380531
+Train Epoch: 0 [42240/60000 (70%)]	Loss: 2.435095
+Train Epoch: 0 [42880/60000 (71%)]	Loss: 2.486328
+Train Epoch: 0 [43520/60000 (72%)]	Loss: 2.276814
+Train Epoch: 0 [44160/60000 (74%)]	Loss: 2.353194
+Train Epoch: 0 [44800/60000 (75%)]	Loss: 2.357399
+Train Epoch: 0 [45440/60000 (76%)]	Loss: 2.301480
+Train Epoch: 0 [46080/60000 (77%)]	Loss: 2.452574
+Train Epoch: 0 [46720/60000 (78%)]	Loss: 2.399912
+Train Epoch: 0 [47360/60000 (79%)]	Loss: 2.346795
+Train Epoch: 0 [48000/60000 (80%)]	Loss: 2.357854
+Train Epoch: 0 [48640/60000 (81%)]	Loss: 2.329559
+Train Epoch: 0 [49280/60000 (82%)]	Loss: 2.249794
+Train Epoch: 0 [49920/60000 (83%)]	Loss: 2.281057
+Train Epoch: 0 [50560/60000 (84%)]	Loss: 2.544172
+Train Epoch: 0 [51200/60000 (85%)]	Loss: 2.378554
+Train Epoch: 0 [51840/60000 (86%)]	Loss: 2.243207
+Train Epoch: 0 [52480/60000 (87%)]	Loss: 2.381620
+Train Epoch: 0 [53120/60000 (88%)]	Loss: 2.439986
+Train Epoch: 0 [53760/60000 (90%)]	Loss: 2.285997
+Train Epoch: 0 [54400/60000 (91%)]	Loss: 2.258952
+Train Epoch: 0 [55040/60000 (92%)]	Loss: 2.350989
+Train Epoch: 0 [55680/60000 (93%)]	Loss: 2.264252
+Train Epoch: 0 [56320/60000 (94%)]	Loss: 2.415776
+Train Epoch: 0 [56960/60000 (95%)]	Loss: 2.371655
+Train Epoch: 0 [57600/60000 (96%)]	Loss: 2.384271
+Train Epoch: 0 [58240/60000 (97%)]	Loss: 2.387308
+Train Epoch: 0 [58880/60000 (98%)]	Loss: 2.348114
+Train Epoch: 0 [59520/60000 (99%)]	Loss: 2.346168
+[33m[W 2024-03-05 13:34:38,258][39m Trial 2 failed with parameters: {'learning_rate': 0.008423211165652351, 'epochs': 3} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in <lambda>
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 105, in objective
+    test_acc = test(model, device, test_loader, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 64, in test
+    for data, target in test_loader:
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+[33m[W 2024-03-05 13:34:38,259][39m Trial 2 failed with value None.
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 209, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in main
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in <lambda>
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 105, in objective
+    test_acc = test(model, device, test_loader, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 64, in test
+    for data, target in test_loader:
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 209, in <module>
+    main()
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in main
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 66, in _optimize
+    _optimize_sequential(
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 163, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 251, in _run_trial
+    raise func_err
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in <lambda>
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 105, in objective
+    test_acc = test(model, device, test_loader, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 64, in test
+    for data, target in test_loader:
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Trial 2 failed with parameters: {'learning_rate': 0.008423211165652351, 'epochs': 3} because of the following error: KeyboardInterrupt().
+Traceback (most recent call last):
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/optuna/study/_optimize.py", line 200, in _run_trial
+    value_or_values = func(trial)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 173, in <lambda>
+    study.optimize(lambda trial: objective(trial, args, model, device, train_loader, test_loader, optimizer), n_trials=5)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 105, in objective
+    test_acc = test(model, device, test_loader, epoch)
+  File "/home/sgeisser/git/plr-exercise/scripts/train.py", line 64, in test
+    for data, target in test_loader:
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1329, in _next_data
+    idx, data = self._get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1285, in _get_data
+    success, data = self._try_get_data()
+  File "/home/sgeisser/.local/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1133, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/usr/lib/python3.10/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/usr/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+Trial 2 failed with value None.
