@@ -4,7 +4,24 @@ import torch.nn.functional as F
 
 
 class Net(nn.Module):
+    """
+    A class to represent a simple CNN model for classifying MNIST digits.
+
+    Methods:
+    --------
+        forward(x) :
+            Forward pass through the CNN model.
+
+    """
+
     def __init__(self):
+        """
+        Initialize the CNN model.
+
+        Attributes
+        ----------
+            None
+        """
 
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, 3, 1)
@@ -15,6 +32,20 @@ class Net(nn.Module):
         self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
+        """
+        Forward pass through the CNN model.
+
+        Attributes
+        ----------
+            x : torch.Tensor
+                input data
+
+        Returns
+        -------
+            torch.Tensor
+                output of the model
+        """
+
         x = self.conv1(x)
         x = F.relu(x)
         x = self.conv2(x)
