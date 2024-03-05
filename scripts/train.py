@@ -1,7 +1,6 @@
 from __future__ import print_function
 import argparse
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
@@ -16,6 +15,25 @@ wandb.login()
 
 
 def train(args, model, device, train_loader, optimizer, epoch):
+    """
+    Train the model for one epoch.
+
+    Attributes
+    ----------
+        args : argparse.Namespace
+            command-line arguments
+        model : torch.nn.Module
+            model to train
+        device : torch.device
+            device to use for training
+        train_loader : torch.utils.data.DataLoader
+            training data
+        optimizer : torch.optim.Optimizer
+            optimizer to use
+        epoch : int
+            current epoch number
+    """
+
     model.train()
 
     for batch_idx, (data, target) in enumerate(train_loader):
@@ -41,7 +59,25 @@ def train(args, model, device, train_loader, optimizer, epoch):
                 break
 
 
-def test(model, device, test_loader, epoch):
+def test(model, device, test_loader):
+    """
+    Test the model on the test set.
+
+    Attributes
+    ----------
+        model : torch.nn.Module
+            model to test
+        device : torch.device
+            device to use for testing
+        test_loader : torch.utils.data.DataLoader
+            test data
+
+    Returns
+    -------
+        float
+            test accuracy of the model
+    """
+
     model.eval()
     test_loss = 0
     correct = 0
@@ -68,6 +104,29 @@ def test(model, device, test_loader, epoch):
 
 
 def objective(trial, args, model, device, train_loader, test_loader):
+    """
+    Objective function for Optuna hyperparameter optimization study of the learning rate and epochs.
+
+    Attributes
+    ----------
+        trial : optuna.Trial
+            a single optimization step
+        args : argparse.Namespace
+            command-line arguments
+        model : torch.nn.Module
+            model to train
+        device : torch.device
+            device to use for training
+        train_loader : torch.utils.data.DataLoader
+            training data
+        test_loader : torch.utils.data.DataLoader
+            test data
+
+    Returns
+    -------
+        float
+            test accuracy of the model
+    """
     # Set up the trial's parameters to search
     learning_rate = trial.suggest_loguniform("learning_rate", 1e-5, 0.1)
     epochs = trial.suggest_int("epochs", 1, 15)
@@ -90,7 +149,7 @@ def objective(trial, args, model, device, train_loader, test_loader):
 
     for epoch in range(args.epochs):
         train(args, model, device, train_loader, optimizer, epoch)
-        test_acc = test(model, device, test_loader, epoch)
+        test_acc = test(model, device, test_loader)
         trial.report(test_acc, epoch)
 
     wandb.finish()
@@ -99,6 +158,43 @@ def objective(trial, args, model, device, train_loader, test_loader):
 
 
 def main():
+    """
+    Main function to train the model
+
+    Arguments
+    ---------
+        args : argparse.Namespace
+            command-line arguments
+
+    Command line arguments
+    ----------------------
+        --batch-size : int
+            input batch size for training (default: 64)
+        --test-batch-size : int
+            input batch size for testing (default: 1000)
+        --epochs : int
+            number of epochs to train (default: 7)
+        --lr : float
+            learning rate (default: 0.00015)
+        --gamma : float
+            Learning rate step gamma (default: 0.7)
+        --no-cuda : bool
+            disables CUDA training (default: False)
+        --dry-run : bool
+            quickly check a single pass (default: False)
+        --seed : int
+            random seed (default: 1)
+        --log-interval : int
+            how many batches to wait before logging training status (default: 10)
+        --save-model : bool
+            For Saving the current Model (default: False)
+        --optuna_optimization : bool
+            enable Optuna hyperparameter optimization study (default: False)
+        --optuna_study_name : str
+            name of the Optuna study (default: optuna-study)
+        --num_trials : int
+            number of trials for Optuna study (default: 15)
+    """
     # Training settings
     parser = argparse.ArgumentParser(description="PyTorch MNIST Example")
     parser.add_argument(
@@ -107,8 +203,8 @@ def main():
     parser.add_argument(
         "--test-batch-size", type=int, default=1000, metavar="N", help="input batch size for testing (default: 1000)"
     )
-    parser.add_argument("--epochs", type=int, default=2, metavar="N", help="number of epochs to train (default: 14)")
-    parser.add_argument("--lr", type=float, default=1.0, metavar="LR", help="learning rate (default: 1.0)")
+    parser.add_argument("--epochs", type=int, default=7, metavar="N", help="number of epochs to train (default: 7)")
+    parser.add_argument("--lr", type=float, default=0.00015, metavar="LR", help="learning rate (default: 0.00015)")
     parser.add_argument("--gamma", type=float, default=0.7, metavar="M", help="Learning rate step gamma (default: 0.7)")
     parser.add_argument("--no-cuda", action="store_true", default=False, help="disables CUDA training")
     parser.add_argument("--dry-run", action="store_true", default=False, help="quickly check a single pass")
@@ -196,7 +292,7 @@ def main():
         scheduler = StepLR(optimizer, step_size=1, gamma=args.gamma)
         for epoch in range(args.epochs):
             train(args, model, device, train_loader, optimizer, epoch)
-            test_acc = test(model, device, test_loader, epoch)
+            test_acc = test(model, device, test_loader)
             scheduler.step()
 
     if args.save_model:
